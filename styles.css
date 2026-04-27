@@ -1,0 +1,501 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+/* ===== COLOR PALETTE ===== */
+:root {
+    /* Primary Colors */
+    --primary: #f1ece7;
+    --secondary: #e26435;
+   
+}
+
+@font-face {
+    font-family: 'Haas Regular';
+    src: url('Haas-Regular.woff') format('woff');
+}
+
+
+/* NAV */
+/* =============================================== */
+/* =============================================== */
+/* =============================================== */
+
+nav {
+    width: 100%;
+    height: 4em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 100px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    transition: .3s ease-in-out;
+    opacity: 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0);
+    animation: fade-bottom 1s ease forwards;
+    animation-delay: 1s;
+}
+
+.scrolled {
+    background-color: var(--primary);
+    transition: .3s ease-in-out;
+    border-bottom: 1px solid #d4cec4;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 2em;
+}
+
+nav li a{
+    font-size: 0.8em;
+    color: #333333;
+    cursor: pointer;
+    text-decoration: none;
+    font-family: 'jetbrains mono', monospace;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: .2s ease;
+}
+
+nav p {
+    font-family: 'EB Garamond', sans-serif;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #1a1a1a;
+}
+
+nav li a:hover {
+    color: var(--secondary);
+    transition: 0.2s ease;
+}
+
+/* Home Section */
+/* =============================================== */
+/* =============================================== */
+/* =============================================== */
+
+section { 
+    width: 100%;
+    background-color: var(--primary);
+    background-size: cover;
+    background-position: center;
+}
+
+.home {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url(./img/hero_bg.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.home-gradient {
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to top, var(--primary), rgba(0,0,0,0));
+} 
+
+.home-content {
+    position: absolute;
+    height: 60%;
+    width: 50%;
+    bottom: 0;
+    left: 7em;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 2em;
+    opacity: 0;
+    animation: fade-left 1s ease forwards;
+    animation-delay: 0.5s;
+}
+
+.home-content::before {
+    content: '';
+    position: absolute;
+    top: 23%;
+    left: 0;
+    width: 1px;
+    height: 60%;
+    background-color: #757575;
+}
+
+.heading {
+    font-family: 'EB Garamond', sans-serif;
+    font-size: 5em;
+    color: #1a1a1a;
+    margin-bottom: -0.2em;
+}
+
+.orange {
+    color: var(--secondary);
+}
+
+.subtext {
+    font-size: 0.8em;
+    color: #333333;
+    cursor: pointer;
+    text-decoration: none;
+    font-family: 'jetbrains mono', monospace;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 1em;
+}
+
+
+/* RFP Section */
+/* =============================================== */
+/* =============================================== */
+/* =============================================== */
+
+.rfp {
+    display: flex;
+    width: 100%;
+    height: auto;
+}
+
+.toc {
+    width: 30%;
+    height: 80vh;
+    position: sticky;
+    top: 4em;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-left: 5em;
+}
+.c {
+    font-size: 0.8em;
+    text-decoration: none;
+    font-family: 'jetbrains mono', monospace;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #757575;
+}
+.line-down {
+    position: relative;
+}
+.line-down::before {
+    content: '';
+    position: absolute;
+    top: 200%;
+    left: 0;
+    width: 70%;
+    height: 1px;
+    background-color: #b7b7b7;
+}
+
+.mb {
+    margin-bottom: 1em;
+}
+
+.marg-top {
+    margin-top: 4em;
+    margin-bottom: 3em;
+}
+
+.tocp {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+.toc-p {
+    font-family: 'Inter', sans-serif;
+    font-size: 1em;
+    color: #333333;
+    transition: .2s ease;
+    margin-left: .5em;
+    text-decoration: none;
+}
+
+section, div {
+  scroll-margin-top: 4em; 
+}
+
+.toc-p:hover {
+    color: var(--secondary);
+    transition: 0.2s ease;
+}   
+
+.rfp-content {
+    width: 70%;
+}
+
+.rfp-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 5em;
+}
+
+.mt {
+    margin-top: 10em;
+}
+
+.mlt {
+    margin-top: 5em;
+}
+
+.rfp-title {
+    display: flex;
+    align-items: baseline;
+}
+
+.rfp-tt {
+    font-family: 'EB Garamond', sans-serif;
+    font-size: 2.5em;
+    color: #1a1a1a;
+    margin-left: 0.1em;
+}
+.rfp-section {
+    position: relative;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 5em;
+    padding-bottom: 3em;
+}
+
+.rfp-section::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 5%;
+    width: 90%;
+    height: 1px;
+    background-color: #b7b7b7;
+}
+.rfp-p {
+    font-family: 'Inter', sans-serif;
+    font-size: 1em;
+    color: #333333;
+    margin-top: 1em;
+    line-height: 1.5em;
+}
+
+/* IMAGES */
+/* =============================================== */
+/* =============================================== */
+/* =============================================== */
+
+.picture-slider-section {
+    padding: 80px 100px;
+    background-color: var(--primary);
+    overflow: hidden;
+    position: relative;
+}
+
+.gallery-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 40px;
+    max-width: 100%;
+}
+
+.section-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: #757575;
+    letter-spacing: 2px;
+    display: block;
+}
+
+.main-display-title {
+    font-family: 'EB Garamond', serif;
+    font-size: 3.5rem;
+    color: #1a1a1a;
+    margin-top: 5px;
+    line-height: 1;
+}
+
+.nav-wrapper {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 10px;
+    z-index: 10;
+}
+
+.custom-btn {
+    position: relative !important;
+    width: 45px !important;
+    height: 45px !important;
+    border: 1px solid #d4cec4 !important;
+    background: #fff !important;
+    margin: 0 !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.custom-btn:hover {
+    background: #f5f5f5 !important;
+    border-color: #bfb9af !important;
+}
+
+.custom-btn::after {
+    font-size: 14px !important;
+    color: #1a1a1a !important;
+    font-weight: bold;
+}
+
+/* Image wrapper with hover effect */
+.img-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    margin-bottom: 20px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.img-wrapper:hover img {
+    transform: scale(1.08);
+}
+
+.image-overlay-tag {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: rgba(40, 40, 40, 0.7);
+    color: #fff;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    padding: 5px 10px;
+    letter-spacing: 1px;
+    z-index: 3;
+}
+
+/* Hover gradient and description */
+.hover-description {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.75) 40%, rgba(0, 0, 0, 0.4) 70%, transparent 100%);
+    color: #fff;
+    font-family: 'EB Garamond', serif;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    padding: 80px 20px 20px 20px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.4s ease;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.img-wrapper:hover .hover-description {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.slide-footer {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+}
+
+.slide-index {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    color: #d4cec4;
+}
+
+.slide-label {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.6rem;
+    color: #1a1a1a;
+    margin: 0;
+}
+
+.mySwiper {
+    width: 100%;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .pitch-showcase {
+        padding: 40px 20px;
+    }
+
+    .main-display-title {
+        font-size: 2.5rem;
+    }
+
+    .gallery-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+}
+
+
+.footer {
+    width: 100%;
+    padding: 5em;
+    background-color: #c6baa5;
+}
+
+
+
+
+
+
+/* ANIMATIONS */
+/* =============================================== */
+/* =============================================== */
+/* =============================================== */
+
+
+@keyframes fade-left {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    } 100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fade-bottom {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    } 100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+

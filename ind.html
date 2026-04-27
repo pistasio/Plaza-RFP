@@ -1,0 +1,323 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+
+<style>
+    .pitch-showcase {
+        padding: 80px 100px;
+        background-color: #f1ece7;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .gallery-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-bottom: 40px;
+        max-width: 100%;
+    }
+
+    .section-tag {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 0.75rem;
+        color: #757575;
+        letter-spacing: 2px;
+        display: block;
+    }
+
+    .main-display-title {
+        font-family: 'EB Garamond', serif;
+        font-size: 3.5rem;
+        color: #1a1a1a;
+        margin-top: 5px;
+        line-height: 1;
+    }
+
+    .nav-wrapper {
+        display: flex;
+        gap: 12px;
+        margin-bottom: 10px;
+        z-index: 10;
+    }
+
+    .custom-btn {
+        position: relative !important;
+        width: 45px !important;
+        height: 45px !important;
+        border: 1px solid #d4cec4 !important;
+        background: #fff !important;
+        margin: 0 !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .custom-btn:hover {
+        background: #f5f5f5 !important;
+        border-color: #bfb9af !important;
+    }
+
+    .custom-btn::after {
+        font-size: 14px !important;
+        color: #1a1a1a !important;
+        font-weight: bold;
+    }
+
+    /* Image wrapper with hover effect */
+    .img-wrapper {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 16 / 10;
+        margin-bottom: 20px;
+        overflow: hidden;
+        cursor: pointer;
+    }
+
+    .img-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+
+    .img-wrapper:hover img {
+        transform: scale(1.08);
+    }
+
+    .image-overlay-tag {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        background: rgba(40, 40, 40, 0.7);
+        color: #fff;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 0.65rem;
+        padding: 5px 10px;
+        letter-spacing: 1px;
+        z-index: 3;
+    }
+
+    /* Hover gradient and description */
+    .hover-description {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.75) 40%, rgba(0, 0, 0, 0.4) 70%, transparent 100%);
+        color: #fff;
+        font-family: 'EB Garamond', serif;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        padding: 80px 20px 20px 20px;
+        opacity: 0;
+        transform: translateY(10px);
+        transition: all 0.4s ease;
+        pointer-events: none;
+        z-index: 2;
+    }
+
+    .img-wrapper:hover .hover-description {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .slide-footer {
+        display: flex;
+        align-items: baseline;
+        gap: 12px;
+    }
+
+    .slide-index {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 0.8rem;
+        color: #d4cec4;
+    }
+
+    .slide-label {
+        font-family: 'EB Garamond', serif;
+        font-size: 1.6rem;
+        color: #1a1a1a;
+        margin: 0;
+    }
+
+    .mySwiper {
+        width: 100%;
+        height: auto;
+    }
+
+    @media (max-width: 768px) {
+        .pitch-showcase {
+            padding: 40px 20px;
+        }
+
+        .main-display-title {
+            font-size: 2.5rem;
+        }
+
+        .gallery-header {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 20px;
+        }
+    }
+</style>
+
+<section class="pitch-showcase">
+    <div class="gallery-header">
+        <div class="gallery-title">
+            <span class="section-tag">§—INNOVATION GALLERY</span>
+            <h2 class="main-display-title">The Pitch Showcase</h2>
+        </div>
+        <div class="nav-wrapper">
+            <div class="swiper-button-prev custom-btn"></div>
+            <div class="swiper-button-next custom-btn"></div>
+        </div>
+    </div>
+
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            
+            <div class="swiper-slide">
+                <div class="img-wrapper">
+                    <div class="image-overlay-tag">TOPOGRAPHIC ARGUMENT</div>
+                    <img src="./img/hero_bg.png" alt="Terraced Forum">
+                    <div class="hover-description">
+                        A cascading structure designed to facilitate democratic dialogue, where elevation creates equality through stepped accessibility.
+                    </div>
+                </div>
+                <div class="slide-footer">
+                    <span class="slide-index">01</span>
+                    <h3 class="slide-label">The Terraced Forum</h3>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="img-wrapper">
+                    <div class="image-overlay-tag">DEMOCRATIC ACOUSTICS</div>
+                    <img src="./img/hero_bg.png" alt="Acoustic Amphitheater">
+                    <div class="hover-description">
+                        Concentric seating enhances egalitarian discourse—every seat is equidistant from the speaker, ensuring perfect sound distribution.
+                    </div>
+                </div>
+                <div class="slide-footer">
+                    <span class="slide-index">02</span>
+                    <h3 class="slide-label">The Acoustic Amphitheater</h3>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="img-wrapper">
+                    <div class="image-overlay-tag">FLUID SYNTAX</div>
+                    <img src="./img/hero_bg.png" alt="Fountain Axis">
+                    <div class="hover-description">
+                        Water becomes architecture, guiding movement through space while providing cooling relief in the urban landscape.
+                    </div>
+                </div>
+                <div class="slide-footer">
+                    <span class="slide-index">03</span>
+                    <h3 class="slide-label">The Fountain Axis</h3>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="img-wrapper">
+                    <div class="image-overlay-tag">URBAN PATTERNS</div>
+                    <img src="./img/hero_bg.png" alt="Grid Matrix">
+                    <div class="hover-description">
+                        Systematic organization creates visual rhythm and navigational clarity within dense metropolitan environments.
+                    </div>
+                </div>
+                <div class="slide-footer">
+                    <span class="slide-index">04</span>
+                    <h3 class="slide-label">The Grid Matrix</h3>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="img-wrapper">
+                    <div class="image-overlay-tag">VERTICAL GARDENS</div>
+                    <img src="./img/hero_bg.png" alt="Living Wall">
+                    <div class="hover-description">
+                        Biophilic design integrates nature vertically, improving air quality while reconnecting inhabitants with greenery.
+                    </div>
+                </div>
+                <div class="slide-footer">
+                    <span class="slide-index">05</span>
+                    <h3 class="slide-label">The Living Wall</h3>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="img-wrapper">
+                    <div class="image-overlay-tag">PARAMETRIC SHELLS</div>
+                    <img src="./img/hero_bg.png" alt="Tensile Canopy">
+                    <div class="hover-description">
+                        Lightweight membrane structures achieve maximum coverage with minimal material, creating dynamic shaded spaces.
+                    </div>
+                </div>
+                <div class="slide-footer">
+                    <span class="slide-index">06</span>
+                    <h3 class="slide-label">The Tensile Canopy</h3>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const swiper = new Swiper(".mySwiper", {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            loop: true,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            breakpoints: {
+                768: {
+                    slidesPerView: 3,
+                    spaceBetween: 30
+                }
+            },
+            mousewheel: {
+                enabled: true,
+                forceToAxis: true,
+                sensitivity: 1,
+            },
+        });
+
+        // Two-finger touchpad swipe with debounce
+        let isScrolling = false;
+        const swiperEl = document.querySelector('.mySwiper');
+        
+        swiperEl.addEventListener('wheel', (e) => {
+            if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
+                e.preventDefault();
+                
+                if (isScrolling) return;
+                
+                if (Math.abs(e.deltaX) > 30) {
+                    isScrolling = true;
+                    
+                    if (e.deltaX > 0) {
+                        swiper.slideNext();
+                    } else {
+                        swiper.slidePrev();
+                    }
+                    
+                    setTimeout(() => {
+                        isScrolling = false;
+                    }, 600);
+                }
+            }
+        }, { passive: false });
+    });
+</script>
