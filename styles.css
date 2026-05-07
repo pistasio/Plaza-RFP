@@ -288,6 +288,9 @@ section, div {
     color: #333333;
     margin-top: 1em;
     line-height: 1.5em;
+    width: 90%;
+    line-height: 1.6;
+    margin-top: 2em;
 }
 
 /* IMAGES */
